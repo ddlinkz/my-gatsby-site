@@ -1,6 +1,6 @@
 module.exports = {
     siteMetadata: {
-      title: `Linkz`,
+      title: `Austin Brown`,
     },
     plugins: [
       {
