@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 const Web = () => (
   <Layout>
     <SEO title="Web"/>
-    <h1>Music</h1>
+    <h1>Web</h1>
     <Link to="/">Go back to the homepage</Link>
   </Layout>
 )
