@@ -43,12 +43,14 @@ export default canvas => {
 
     function buildCamera({ width, height }) {
         const aspectRatio = width / height;
-        const fieldOfView = 600;
-        const nearPlane = 4;
-        const farPlane = 100; 
+        const fieldOfView = 100;
+        const nearPlane = 5;
+        const farPlane = 150; 
         const camera = new THREE.PerspectiveCamera(fieldOfView, aspectRatio, nearPlane, farPlane);
 
-        camera.position.z = 40;
+        camera.position.z = 90;
+        camera.position.y = 50;
+        //camera.position.x = 50;
 
         return camera;
     }
@@ -68,7 +70,7 @@ export default canvas => {
         for(let i=0; i<sceneSubjects.length; i++)
             sceneSubjects[i].update(elapsedTime);
 
-        updateCameraPositionRelativeToMouse();
+        //updateCameraPositionRelativeToMouse();
 
         renderer.render(scene, camera);
     }

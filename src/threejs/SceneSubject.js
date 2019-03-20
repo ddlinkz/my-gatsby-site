@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import * as OBJLoader from 'three-obj-loader';
 
 import alphaTexture from './stripes_gradient.jpg';
-import angelObj from './obj/male02.obj';
+import angelObj from './obj/Alucy.obj';
 
 OBJLoader(THREE);
 
@@ -28,7 +28,10 @@ export default scene => {
 
     var manager = new THREE.LoadingManager();
     var loader = new THREE.OBJLoader(manager);
-    var material = new THREE.MeshBasicMaterial({color: 'blue', side: THREE.DoubleSide});
+    var material = new THREE.MeshPhongMaterial({
+        color: 'blue', 
+        flatShading: true,
+        shininess: 80});
 
     loader.load(
         angelObj,
@@ -38,6 +41,7 @@ export default scene => {
                     child.material = material;
                 }
             })
+            object.scale.set(0.1,0.1,0.1);
             group.add(object);
         },
         function (xhr){
@@ -49,13 +53,13 @@ export default scene => {
     );
 
     //group.add(loader);
-    group.add(subjectMesh);
-    group.add(subjectWireframe);
+    //group.add(subjectMesh);
+    //group.add(subjectWireframe);
     scene.add(group);
 
-    group.rotation.z = Math.PI/4;
+    group.rotation.y = Math.PI/4;
 
-    const speed = 1;
+    const speed = 0.5;
     const textureOffsetSpeed = 0.02;
 
     function deformGeometry(geometry) {

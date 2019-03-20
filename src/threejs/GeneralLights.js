@@ -2,8 +2,8 @@ import * as THREE from 'three'
 
 export default scene => {    
 
-    const lightIn = new THREE.PointLight("#4CAF50", 30);
-    const lightOut = new THREE.PointLight("#2196F3", 10);
+    const lightIn = new THREE.PointLight("#4CAF50", 1);
+    const lightOut = new THREE.PointLight("#2196F3", 1);
     lightOut.position.set(40,20,40);
 
     scene.add(lightIn);
