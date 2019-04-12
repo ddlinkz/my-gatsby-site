@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import * as OBJLoader from 'three-obj-loader';
 
 import alphaTexture from './stripes_gradient.jpg';
-import angelObj from './obj/Alucy.obj';
+import skullObj from './obj/skull.obj';
 
 OBJLoader(THREE);
 
@@ -12,6 +12,7 @@ export default scene => {
     const subjectGeometry = deformGeometry(new THREE.IcosahedronGeometry(10, 2));
     
     const subjectMaterial = new THREE.MeshStandardMaterial({ color: "#000", transparent: true, side: THREE.DoubleSide, alphaTest: 0.5 });
+    //const subjectMaterial = new THREE.MeshPhongMaterial( { emissive: 0x111111, envMap: mirrorCamera.renderTarget } );
     subjectMaterial.alphaMap = new THREE.TextureLoader().load(alphaTexture);
     subjectMaterial.alphaMap.magFilter = THREE.NearestFilter;
     subjectMaterial.alphaMap.wrapT = THREE.RepeatWrapping;
@@ -34,14 +35,14 @@ export default scene => {
         shininess: 80});
 
     loader.load(
-        angelObj,
+        skullObj,
         function (object){
             object.traverse(function(child) {
                 if(child instanceof THREE.Mesh){
                     child.material = material;
                 }
             })
-            object.scale.set(0.1,0.1,0.1);
+            object.scale.set(12,12,12);
             group.add(object);
         },
         function (xhr){
