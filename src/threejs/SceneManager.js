@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import SceneSubject from './SceneSubject';
 import GeneralLights from './GeneralLights';
+import OrbitControls from './OrbitControls';
 
 export default canvas => {
 
@@ -21,6 +22,7 @@ export default canvas => {
     const renderer = buildRender(screenDimensions);
     const camera = buildCamera(screenDimensions);
     const sceneSubjects = createSceneSubjects(scene);
+    const controls = new THREE.OrbitControls(camera);
 
     function buildScene() {
         const scene = new THREE.Scene();
@@ -71,6 +73,7 @@ export default canvas => {
             sceneSubjects[i].update(elapsedTime);
 
         //updateCameraPositionRelativeToMouse();
+        controls.update();
 
         renderer.render(scene, camera);
     }
