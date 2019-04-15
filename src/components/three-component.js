@@ -9,7 +9,12 @@ export default class ThreeContainer extends Component {
 
   render () {
       return (
-        <div class="three-canvas" 
+        <div class="three-canvas"
+          style={{
+            width: '100%',
+            height: '100%',
+            display: 'block'
+          }}
              ref={element => this.threeRootElement = element} />
       );
   }

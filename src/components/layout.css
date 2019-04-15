@@ -15,15 +15,14 @@ figcaption,
 figure,
 footer,
 header,
-main,
 menu,
 nav,
 section,
+canvas,
 summary {
   display: block;
 }
 audio,
-canvas,
 progress,
 video {
   display: inline-block;
