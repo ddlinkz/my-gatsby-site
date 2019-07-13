@@ -3,10 +3,10 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const Music = () => (
+const Projects = () => (
   <Layout>
-    <SEO title="Music"/>
+    <SEO title="Projects"/>
   </Layout>
 )
 
-export default Music
+export default Projects

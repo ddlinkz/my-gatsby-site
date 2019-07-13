@@ -1,0 +1,25 @@
+a {
+    color: #FFF;
+    text-decoration: none;
+    transition: color 1s ease;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    color: yellow;
+}
+
+.link-home {
+    margin: 7.5%;
+}
+
+.link-web {
+    margin: 7.5%
+}
+
+.link-music {
+    margin: 7.5%
+}
